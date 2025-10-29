@@ -1,390 +1,264 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- i want to just add a portfolio website for my art -->
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Art Portfolio | Contemporary Visual Artist</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BAPLU | Art Portfolio</title>
     <meta
       name="description"
-      content="Contemporary art portfolio showcasing original works, paintings, and digital art. View my latest pieces and get in touch for commissions or exhibitions."
+      content="Art portfolio of Bipuli Wanniarachchi — a contemporary visual artist and digital creator. Explore digital art, acrylic paintings, animations, and pencil drawings inspired by Sri Lanka’s natural beauty."
     />
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Styles -->
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="dark-theme.css" />
   </head>
+
   <body>
+    <!-- Header -->
     <header class="site-header">
       <div class="container header-inner">
         <h1 class="brand">BAPLU</h1>
         <nav class="top-nav">
-          <a href="#work">Work</a>
-          <a href="#exhibitions">Exhibitions</a>
+          <a href="#gallery">Gallery</a>
           <a href="#about">About</a>
           <a href="#contact">Contact</a>
         </nav>
       </div>
     </header>
 
-    <main>
-      <section class="hero">
-        <div class="container">
-          <div class="hero-grid">
-            <div>
-              <h2 class="hero-title">Visual Artist & Digital Creator</h2>
-              <p class="hero-sub">
-                Blending the essence of Sri Lanka’s natural beauty with
-                expressive color and form, my work bridges traditional and
-                digital art. From acrylic landscapes and charcoal portraits to
-                vibrant digital illustrations, each piece reflects emotion,
-                storytelling, and a deep connection to nature. My digital
-                gallery captures this journey — where every brushstroke and
-                pixel tells a story of creativity and place.
-              </p>
-              <p class="cta-row">
-                <a class="btn" href="#gallery">View Gallery</a>
-              </p>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <h2 class="hero-title">Visual Artist & Digital Creator</h2>
+            <p class="hero-sub">
+              Blending the essence of Sri Lanka’s natural beauty with expressive
+              color and form, my art bridges traditional and digital media —
+              from acrylic landscapes and charcoal portraits to vibrant digital
+              illustrations. Each piece captures emotion, storytelling, and a
+              deep connection to nature.
+            </p>
+            <a class="btn" href="#gallery">View Gallery</a>
+          </div>
+          <div class="hero-preview">
+            <img
+              src="images/artspace1.jpg"
+              alt="Artistic workspace preview"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery container">
+      <!-- Digital Art -->
+      <div class="category-section">
+        <h3 class="category-title">Digital Art</h3>
+        <p class="category-description">
+          Contemporary digital illustrations and concept art created using
+          professional tools and expressive techniques.
+        </p>
+        <div class="grid">
+          <button class="card">
+            <img
+              src="images/digital/ForbiddenReality.jpg"
+              alt="Forbidden Reality Digital Art"
+              loading="lazy"
+            />
+            <div class="card-meta">
+              <h4>Forbidden Reality</h4>
+              <span>Digital Illustration</span>
             </div>
-            <div class="hero-preview">
-              <img
-                src="images/artspace1.jpg"
-                alt="Artwork preview"
-                loading="lazy"
-              />
-              <!-- <img src="images/artspace2.jpg" alt="Artwork preview" loading="lazy" /> -->
+          </button>
+          <button class="card">
+            <img
+              src="images/digital/PetalsInTheWind.jpg"
+              alt="Petals in the Wind Digital Art"
+              loading="lazy"
+            />
+            <div class="card-meta">
+              <h4>Petals in the Wind</h4>
+              <span>Digital Illustration</span>
             </div>
-          </div>
+          </button>
+          <button class="card">
+            <img
+              src="images/digital/Whispering Heights.jpg"
+              alt="Whispering Heights Digital Art"
+              loading="lazy"
+            />
+            <div class="card-meta">
+              <h4>Whispering Heights</h4>
+              <span>Digital Illustration</span>
+            </div>
+          </button>
+          <button class="card">
+            <img
+              src="images/digital/Happy Coffee.jpg"
+              alt="Happy Coffee Digital Art"
+              loading="lazy"
+            />
+            <div class="card-meta">
+              <h4>Happy Coffee</h4>
+              <span>Digital Illustration</span>
+            </div>
+          </button>
+          <button class="card">
+            <img
+              src="images/digital/Bridging Worlds The Digital Dharma.jpg"
+              alt="Bridging Worlds – The Digital Dharma"
+              loading="lazy"
+            />
+            <div class="card-meta">
+              <h4>Bridging Worlds – The Digital Dharma</h4>
+              <span>Digital Illustration</span>
+            </div>
+          </button>
+          <button class="card">
+            <img
+              src="images/digital/Under the Stripped Umbrella.jpg"
+              alt="Under the Stripped Umbrella"
+              loading="lazy"
+            />
+            <div class="card-meta">
+              <h4>Under the Stripped Umbrella</h4>
+              <span>Digital Illustration</span>
+            </div>
+          </button>
         </div>
-      </section>
-
-      <section id="gallery" class="gallery container">
-        <!-- Digital Art Section -->
-        <div class="category-section">
-          <h3 class="category-title">Digital Art</h3>
-          <p class="category-description">
-            Contemporary digital illustrations and concept art created using
-            professional digital tools and techniques.
-          </p>
-          <div class="grid">
-            <button class="card" data-index="0">
-              <img
-                src="images/digital/ForbiddenReality.jpg"
-                alt="ForbiddenReality Digital Art"
-                loading="lazy"
-              />
-              <div class="card-meta">
-                <h4>ForbiddenReality Digital Art</h4>
-                <span>Digital Illustration</span>
-              </div>
-            </button>
-            <button class="card" data-index="0">
-              <img
-                src="images/digital/PetalsInTheWind.jpg"
-                alt="PetalsInTheWind Digital Art"
-                loading="lazy"
-              />
-              <div class="card-meta">
-                <h4>Petals In The Wind Digital Art</h4>
-                <span>Digital Illustration</span>
-              </div>
-            </button>
-            <button class="card" data-index="0">
-              <img
-                src="images/digital/Whispering Heights.jpg"
-                alt="Whispering Heights Digital Art"
-                loading="lazy"
-              />
-              <div class="card-meta">
-                <h4>Whispering Heights Digital Art</h4>
-                <span>Digital Illustration</span>
-              </div>
-            </button>
-            <button class="card" data-index="0">
-              <img
-                src="images/digital/Happy Coffee.jpg"
-                alt="Happy Coffee Digital Art"
-                loading="lazy"
-              />
-              <div class="card-meta">
-                <h4>Happy Coffee Digital Art</h4>
-                <span>Digital Illustration</span>
-              </div>
-            </button>
-            <button class="card" data-index="0">
-              <img
-                src="images/digital/Bridging Worlds The Digital Dharma.jpg"
-                alt="Bridging Worlds The Digital Dharma - Digital Art"
-                loading="lazy"
-              />
-              <div class="card-meta">
-                <h4>Bridging Worlds The Digital Dharma - Digital Art</h4>
-                <span>Digital Illustration</span>
-              </div>
-            </button>
-            <button class="card" data-index="0">
-              <img
-                src="images/digital/Under the Stripped Umbrella.jpg"
-                alt="Under the Stripped Umbrella"
-                loading="lazy"
-              />
-              <div class="card-meta">
-                <h4>Under the Stripped Umbrella</h4>
-                <span>Digital Illustration</span>
-              </div>
-            </button>
-            <!-- Add more digital art cards here -->
-          </div>
-        </div>
-
-        <!-- Animation Section -->
-        <div class="category-section">
-          <h3 class="category-title">Animated Arts</h3>
-          <p class="category-description">
-            Motion graphics and animated pieces that bring stories to life
-            through movement and interaction.
-          </p>
-          <div class="grid">
-            <button class="card" data-index="1">
-              <video
-                src="images/animations/Steps of Joy.mp4"
-                alt="Animation Preview"
-                autoplay
-                loop
-                muted
-                playsinline
-              ></video>
-              <div class="card-meta">
-                <h4>Steps of Joy</h4>
-                <span>2D Animation</span>
-              </div>
-            </button>
-            <button class="card" data-index="1">
-              <video
-                src="images/animations/23 frames.mp4"
-                alt="Animation Preview"
-                autoplay
-                loop
-                muted
-                playsinline
-              ></video>
-              <div class="card-meta">
-                <h4>23 frames</h4>
-                <span>2D Animation</span>
-              </div>
-            </button>
-             <button class="card" data-index="1">
-              <video
-                src="images/animations/frame by frame.mp4"
-                alt="Animation Preview"
-                autoplay
-                loop
-                muted
-                playsinline
-              ></video>
-              <div class="card-meta">
-                <h4>Frame by Frame</h4>
-                <span>2D Animation</span>
-              </div>
-            </button>
-              </video>
-              <!-- <div class="card-meta">
-                <h4>Chill Guy</h4>
-                <span>Frame by Frame Animation</span>
-              </div> -->
-            </button>
-             <button class="card" data-index="1">
-              <video
-                src="images/animations/Chill Guy.mp4"
-                alt="Animation Preview"
-                autoplay
-                loop
-                muted
-                playsinline
-              ></video>
-              <div class="card-meta">
-                <h4>Chill Guy</h4>
-                <span>2D Animation</span>
-              </div>
-            </button>
-            <!-- Add more animation cards here -->
-          </div>
-        </div>
-
-        <!-- Traditional Drawing Section -->
-        <div class="category-section">
-          <h3 class="category-title">Pencil Drawings</h3>
-          <p class="category-description">
-            Fine art drawings executed in graphite and charcoal, exploring
-            light, shadow, and form.
-          </p>
-          <div class="grid">
-            <button class="card" data-index="2">
-              <img
-                src="images/graphite1.svg"
-                alt="Graphite Drawing"
-                loading="lazy"
-              />
-              <div class="card-meta">
-                <h4>Light Study</h4>
-                <span>Graphite on Paper</span>
-              </div>
-            </button>
-            <button class="card" data-index="3">
-              <img
-                src="images/charcoal1.svg"
-                alt="Charcoal Drawing"
-                loading="lazy"
-              />
-              <div class="card-meta">
-                <h4>Shadow Study</h4>
-                <span>Charcoal on Paper</span>
-              </div>
-            </button>
-            <!-- Add more drawing cards here -->
-          </div>
-        </div>
-
-        <!-- Painting Section -->
-        <div class="category-section">
-          <h3 class="category-title">Acrylic Paintings</h3>
-          <p class="category-description">
-            Vibrant acrylic works on canvas, featuring bold colors and
-            expressive techniques.
-          </p>
-          <div class="grid">
-            <button class="card" data-index="4">
-              <img
-                src="images/acrylic1.svg"
-                alt="Acrylic Painting"
-                loading="lazy"
-              />
-              <div class="card-meta">
-                <h4>Color Exploration</h4>
-                <span>Acrylic on Canvas</span>
-              </div>
-            </button>
-            <!-- Add more painting cards here -->
-          </div>
-        </div>
-      </section>
-
-      <!-- Modal viewer -->
-      <div id="modal" class="modal" aria-hidden="true">
-        <button id="closeBtn" class="modal-close" aria-label="Close">×</button>
-        <button id="prevBtn" class="modal-nav left" aria-label="Previous">
-          ‹
-        </button>
-        <div class="modal-content">
-          <img
-            id="modalImage"
-            src=""
-            alt="Open artwork"
-            style="display: none"
-          />
-          <video
-            id="modalVideo"
-            controls
-            style="display: none; width: 100%; height: auto"
-          >
-            Your browser does not support the video tag.
-          </video>
-          <div id="modalCaption" class="modal-caption"></div>
-        </div>
-        <button id="nextBtn" class="modal-nav right" aria-label="Next">
-          ›
-        </button>
       </div>
 
-      <section id="about" class="about container">
-        <h3 class="section-title">About</h3>
-        <p>
-          I'm an artist working across digital and traditional media. This
-          portfolio is a simple, modern showcase of my work. Replace the demo
-          images in the <code>images/</code> folder with your real artworks
-          (keep filenames or update <code>index.html</code> accordingly).
+      <!-- Animated Arts -->
+      <div class="category-section">
+        <h3 class="category-title">Animated Arts</h3>
+        <p class="category-description">
+          Motion graphics and animated pieces that bring stories to life through
+          movement and rhythm.
         </p>
-      </section>
-
-      <section id="contact" class="contact container">
-        <h3 class="section-title">Contact & Profiles</h3>
-        <div class="contact-grid">
-          <div class="contact-card">
-            <h4>Contact</h4>
-            <p>
-              Email:
-              <a href="mailto:bipuliwanniarachchi@gmail.com"
-                >bipuliwanniarachchi@gmail.com</a
-              >
-            </p>
-            <p>Phone: <a href="tel:+1234567890">+94 70 1255477</a></p>
-          </div>
-          <div class="contact-card">
-            <h4>Find me</h4>
-            <ul class="profiles">
-              <li>
-                <a
-                  target="_blank"
-                  rel="noopener"
-                  href="https://www.instagram.com/baplu_portraits?igsh=MXgyY2ZyeHM0YjBuMg=="
-                  >Instagram</a
-                >
-              </li>
-              <li>
-                <a
-                  target="_blank"
-                  rel="noopener"
-                  href="https://www.upwork.com/freelancers/~01a263cbf53a874630"
-                  >Upwork</a
-                >
-              </li>
-              <li>
-                <a
-                  target="_blank"
-                  rel="noopener"
-                  href="https://www.freelancer.com/u/Baplu"
-                  >Freelancer</a
-                >
-              </li>
-            </ul>
-          </div>
+        <div class="grid">
+          <button class="card">
+            <video src="images/animations/Steps of Joy.mp4" autoplay loop muted playsinline></video>
+            <div class="card-meta">
+              <h4>Steps of Joy</h4>
+              <span>2D Animation</span>
+            </div>
+          </button>
+          <button class="card">
+            <video src="images/animations/23 frames.mp4" autoplay loop muted playsinline></video>
+            <div class="card-meta">
+              <h4>23 Frames</h4>
+              <span>2D Animation</span>
+            </div>
+          </button>
+          <button class="card">
+            <video src="images/animations/frame by frame.mp4" autoplay loop muted playsinline></video>
+            <div class="card-meta">
+              <h4>Frame by Frame</h4>
+              <span>2D Animation</span>
+            </div>
+          </button>
+          <button class="card">
+            <video src="images/animations/Chill Guy.mp4" autoplay loop muted playsinline></video>
+            <div class="card-meta">
+              <h4>Chill Guy</h4>
+              <span>2D Animation</span>
+            </div>
+          </button>
         </div>
-      </section>
-    </main>
+      </div>
 
+      <!-- Pencil Drawings -->
+      <div class="category-section">
+        <h3 class="category-title">Pencil Drawings</h3>
+        <p class="category-description">
+          Graphite and charcoal works exploring light, form, and emotion.
+        </p>
+        <div class="grid">
+          <button class="card">
+            <img src="images/graphite1.svg" alt="Graphite Drawing" loading="lazy" />
+            <div class="card-meta">
+              <h4>Light Study</h4>
+              <span>Graphite on Paper</span>
+            </div>
+          </button>
+          <button class="card">
+            <img src="images/charcoal1.svg" alt="Charcoal Drawing" loading="lazy" />
+            <div class="card-meta">
+              <h4>Shadow Study</h4>
+              <span>Charcoal on Paper</span>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Acrylic Paintings -->
+      <div class="category-section">
+        <h3 class="category-title">Acrylic Paintings</h3>
+        <p class="category-description">
+          Vibrant acrylic works on canvas featuring bold colors and expressive techniques.
+        </p>
+        <div class="grid">
+          <button class="card">
+            <img src="images/acrylic1.svg" alt="Acrylic Painting" loading="lazy" />
+            <div class="card-meta">
+              <h4>Color Exploration</h4>
+              <span>Acrylic on Canvas</span>
+            </div>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="about container">
+      <h3 class="section-title">About</h3>
+      <p>
+        I’m Bipuli Wanniarachchi, an artist working across digital and traditional media.
+        My art explores emotion, nature, and form through color and texture.
+        This portfolio is a reflection of my creative journey — from fine art to digital storytelling.
+      </p>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact container">
+      <h3 class="section-title">Contact</h3>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h4>Get in Touch</h4>
+          <p>Email: <a href="mailto:bipuliwanniarachchi@gmail.com">bipuliwanniarachchi@gmail.com</a></p>
+          <p>Phone: <a href="tel:+94701255477">+94 70 125 5477</a></p>
+        </div>
+        <div class="contact-card">
+          <h4>Follow Me</h4>
+          <ul class="profiles">
+            <li><a href="https://www.instagram.com/baplu_portraits" target="_blank">Instagram</a></li>
+            <li><a href="https://www.upwork.com/freelancers/~01a263cbf53a874630" target="_blank">Upwork</a></li>
+            <li><a href="https://www.freelancer.com/u/Baplu" target="_blank">Freelancer</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="site-footer">
       <div class="container footer-inner">
-        <!-- <small>© <span id="year"></span> My Art • Built with ❤️</small> -->
-        <nav class="social-inline">
-          <a
-            href="https://www.instagram.com/baplu_portraits?igsh=MXgyY2ZyeHM0YjBuMg=="
-            target="_blank"
-            rel="noopener"
-            aria-label="Instagram"
-            >Instagram</a
-          >
-          <a
-            href="https://www.upwork.com/freelancers/~01a263cbf53a874630"
-            target="_blank"
-            rel="noopener"
-            aria-label="Upwork"
-            >Upwork</a
-          >
-          <a
-            href="https://www.freelancer.com/u/Baplu"
-            target="_blank"
-            rel="noopener"
-            aria-label="Freelancer"
-            >Freelancer</a
-          >
-        </nav>
+        <small>© <span id="year"></span> BAPLU — All rights reserved.</small>
       </div>
     </footer>
 
+    <!-- Script -->
     <script src="script.js"></script>
   </body>
 </html>
