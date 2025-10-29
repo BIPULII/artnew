@@ -44,6 +44,8 @@ body{
   font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
   background:var(--bg);
   color:var(--text);
+  /* Prevent horizontal scrollbar caused by full-bleed tricks elsewhere */
+  overflow-x:hidden;
   -webkit-font-smoothing:antialiased;
   line-height:1.6;
 }
@@ -216,14 +218,62 @@ body{
   box-shadow: 
     0 20px 40px rgba(0,0,0,0.3),
     0 0 0 1px rgba(109,40,217,0.2);
+
+  /* Ensure hero area has visible height so slideshow images appear */
+  min-height: 360px;
 }
 
-.hero-preview img {
+.slideshow {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  pointer-events: none;
+}
+
+.slide.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.slide img {
   display: block;
   width: 100%;
-  height: auto;
+  /* Fill the slide container so images are visible */
+  height: 100%;
+  object-fit: cover;
   transform-origin: center;
   transition: transform 0.3s ease-out;
+}
+
+.slideshow-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 2;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background: var(--accent);
+  transform: scale(1.2);
 }
 
 /* Replace floating animation with subtle hover effect */
@@ -283,9 +333,12 @@ body{
 }
 
 .category-section:nth-child(odd) {
+  /* Avoid using 100vw which causes horizontal scrolling on many devices
+     Replace full-bleed trick with standard full-width background and
+     centered content padding so layout stays responsive */
   background:var(--bg-alt);
-  margin:140px -100vw;
-  padding:100px 100vw;
+  margin:140px 0;
+  padding:100px 0;
   border-top:1px solid rgba(109,40,217,0.2);
   border-bottom:1px solid rgba(109,40,217,0.2);
 }
@@ -325,7 +378,8 @@ body{
 
 .gallery .grid{
   display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(360px,1fr));
+  /* allow cards to shrink on smaller screens by lowering min-width */
+  grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
   gap:32px;
   padding:20px 0;
   perspective:1000px;
@@ -350,9 +404,21 @@ body{
 .card img{
   display:block;
   width:100%;
-  height:360px;
+  /* Use flexible height so images scale naturally on small screens */
+  height:auto;
+  /* Provide a sensible aspect ratio for consistent card appearance */
+  aspect-ratio: 4 / 3;
   object-fit:cover;
-  transition:transform 0.6s ease
+  transition:transform 0.6s ease;
+}
+
+/* Make embedded videos responsive inside cards */
+.card video {
+  display:block;
+  width:100%;
+  height:auto;
+  aspect-ratio: 4 / 3;
+  object-fit:cover;
 }
 .card-meta{
   padding:20px;
@@ -376,26 +442,47 @@ body{
 .card:hover img{
   transform:scale(1.03)
 }
-.modal{position:fixed;inset:0;background:rgba(5,8,12,0.7);display:flex;align-items:center;justify-content:center;padding:40px;opacity:0;pointer-events:none;transition:opacity 220ms ease;z-index:60}
-.modal[aria-hidden="false"]{opacity:1;pointer-events:auto}
-.modal-content{
-  max-width:90%;
-  max-height:80vh;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  position:relative;
-  overflow:hidden;
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(5,8,12,0.95);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  z-index: 1000;
 }
 
-.modal-content img {
-  max-width:100%;
-  max-height:70vh;
-  object-fit:contain;
-  opacity:1;
-  transition:
-    transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-    opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+.modal[aria-hidden="false"] {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-content {
+  max-width: 95%;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.modal-content img,
+.modal-content video {
+  max-width: 100%;
+  max-height: 85vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 4px 60px rgba(0,0,0,0.5);
+}
+
+.modal-caption {
+  color: var(--text);
+  margin-top: 20px;
+  font-size: 18px;
+  text-align: center;
 }
 .modal-content img{max-width:100%;max-height:80vh;border-radius:10px;box-shadow:0 30px 60px rgba(2,6,23,0.7)}
 .modal-caption{margin-top:12px;color:var(--muted)}
@@ -437,6 +524,11 @@ body{
   .hero-grid{grid-template-columns:1fr;}
   .hero-preview{order:-1}
   .contact-grid{grid-template-columns:1fr}
+}
+
+@media (max-width:768px){
+  .hero-preview{min-height:260px}
+  .slide img{height:100%}
 }
 /* small subtle entrance */
 .grid .card{opacity:0;transform:translateY(12px);animation:fadeUp 420ms ease forwards}

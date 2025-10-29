@@ -1,3 +1,56 @@
+// Slideshow functionality
+function initSlideshow() {
+    const slideshow = document.querySelector('.slideshow');
+    const slides = slideshow.querySelectorAll('.slide');
+    const dotsContainer = slideshow.querySelector('.slideshow-dots');
+    let currentSlide = 0;
+    let slideInterval;
+
+    // Create dots
+    slides.forEach((_, index) => {
+        const dot = document.createElement('button');
+        dot.className = 'dot' + (index === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', `Go to slide ${index + 1}`);
+        dot.addEventListener('click', () => {
+            clearInterval(slideInterval);
+            goToSlide(index);
+            startSlideshow();
+        });
+        dotsContainer.appendChild(dot);
+    });
+
+    const dots = dotsContainer.querySelectorAll('.dot');
+
+    function goToSlide(index) {
+        slides[currentSlide].classList.remove('active');
+        dots[currentSlide].classList.remove('active');
+        currentSlide = index;
+        slides[currentSlide].classList.add('active');
+        dots[currentSlide].classList.add('active');
+    }
+
+    function nextSlide() {
+        let next = currentSlide + 1;
+        if (next >= slides.length) next = 0;
+        goToSlide(next);
+    }
+
+    function startSlideshow() {
+        if (slideInterval) clearInterval(slideInterval);
+        slideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+    }
+
+    // Start the slideshow
+    startSlideshow();
+
+    // Pause on hover
+    slideshow.addEventListener('mouseenter', () => clearInterval(slideInterval));
+    slideshow.addEventListener('mouseleave', startSlideshow);
+}
+
+// Initialize slideshow when DOM is loaded
+document.addEventListener('DOMContentLoaded', initSlideshow);
+
 // Simple modal gallery viewer
 const modal = document.getElementById('modal');
 const modalImage = document.getElementById('modalImage');
